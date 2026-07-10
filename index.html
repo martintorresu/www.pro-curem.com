@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pro.Curem — Procurement Industrial Inteligente. Asesoría especializada + SaaS para gestionar el ciclo completo de tus compras industriales con alertas en tiempo real." />
+  <title>Pro.Curem — Control Total de tus Compras Industriales</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17544760432"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17544760432');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400&display=swap" rel="stylesheet">
+  <style>
+    @keyframes pulse-dot {
+      0%   { box-shadow: 0 0 0 0 rgba(0,220,130,0.7); }
+      60%  { box-shadow: 0 0 0 7px rgba(0,220,130,0); }
+      100% { box-shadow: 0 0 0 0 rgba(0,220,130,0); }
+    }
+    :root {
+      --navy: #0A2540;
+      --blue: #00A3E0;
+      --blue-light: #E6F6FD;
+      --orange: #FF6B35;
+      --orange-light: #FFF1EC;
+      --green: #00B87A;
+      --gray-100: #F8FAFC;
+      --gray-200: #EEF2F7;
+      --gray-300: #CBD5E1;
+      --gray-500: #64748B;
+      --gray-700: #334155;
+      --text: #1A2B3C;
+      --white: #FFFFFF;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--navy); padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px; box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    }
+    /* ── LOGO SVG ── */
+    .logo-svg { display: flex; align-items: center; }
+    .logo-wordmark {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 28px;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      line-height: 1;
+    }
+    .logo-wordmark .part { color: #fff; }
+    .logo-wordmark .part.dark { color: #1a2b4a; }
+    .logo-dot-wrap {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 22px; height: 22px; margin: 0 2px;
+      border: 1.5px solid rgba(255,255,255,0.5);
+      border-radius: 50%;
+    }
+    .logo-dot-wrap.dark { border-color: rgba(26,43,74,0.4); }
+    .logo-dot {
+      width: 11px; height: 11px; border-radius: 50%;
+      background: #00DC82;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    .logo-tagline {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: rgba(255,255,255,0.55);
+      margin-top: 3px;
+      text-transform: uppercase;
+    }
+    .logo-tagline.dark { color: rgba(26,43,74,0.5); }
+    .logo-underline {
+      height: 1.5px;
+      background: linear-gradient(90deg, #00DC82, transparent);
+      margin-top: 2px;
+      width: 80%;
+    }
+    .logo-block { display: flex; flex-direction: column; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { color: rgba(255,255,255,0.8); font-size: 15px; transition: color .2s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta {
+      background: var(--orange); color: #fff !important; padding: 9px 22px;
+      border-radius: 6px; font-weight: 600; transition: background .2s, transform .1s;
+    }
+    .nav-cta:hover { background: #e05520; transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 60%, #0d3a68 100%);
+      padding: 90px 5% 80px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 40px; min-height: 580px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; right: -80px; top: -60px;
+      width: 520px; height: 520px; border-radius: 50%;
+      background: rgba(0,163,224,0.07);
+    }
+    .hero::after {
+      content: ''; position: absolute; right: 100px; bottom: -100px;
+      width: 300px; height: 300px; border-radius: 50%;
+      background: rgba(255,107,53,0.06);
+    }
+    .hero-content { max-width: 580px; position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-block; background: rgba(0,163,224,0.18); color: var(--blue);
+      border: 1px solid rgba(0,163,224,0.35); border-radius: 20px;
+      padding: 5px 14px; font-size: 13px; font-weight: 600; margin-bottom: 20px;
+    }
+    .hero h1 { font-size: 46px; font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: 20px; }
+    .hero h1 span { color: var(--orange); }
+    .hero p { font-size: 18px; color: rgba(255,255,255,0.78); margin-bottom: 36px; line-height: 1.7; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .btn-primary {
+      background: var(--orange); color: #fff; padding: 14px 32px;
+      border-radius: 8px; font-weight: 700; font-size: 16px;
+      transition: background .2s, transform .15s, box-shadow .2s;
+      box-shadow: 0 4px 16px rgba(255,107,53,0.35);
+    }
+    .btn-primary:hover { background: #e05520; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,107,53,0.4); }
+    .btn-secondary {
+      background: transparent; color: #fff; padding: 14px 28px;
+      border: 2px solid rgba(255,255,255,0.3); border-radius: 8px;
+      font-weight: 600; font-size: 16px; transition: border-color .2s, background .2s;
+    }
+    .btn-secondary:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.06); }
+    .hero-visual { position: relative; z-index: 1; flex-shrink: 0; }
+    .hero-card {
+      background: rgba(255,255,255,0.06); backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.12); border-radius: 16px;
+      padding: 24px; width: 340px;
+    }
+    .hero-card-title-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .hero-card-title { color: rgba(255,255,255,0.5); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0; }
+    .live-badge {
+      display: inline-flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 700;
+      color: var(--green); letter-spacing: .5px; text-transform: uppercase;
+      background: rgba(0,184,122,0.12); border: 1px solid rgba(0,184,122,0.3);
+      border-radius: 20px; padding: 3px 9px;
+    }
+    .live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: pulse-dot 1.4s ease-in-out infinite; }
+    .alerts-feed { display: flex; flex-direction: column; }
+    .alert-item {
+      display: flex; gap: 12px; align-items: flex-start;
+      background: rgba(255,255,255,0.05); border-radius: 10px;
+      padding: 12px 14px; margin-bottom: 10px;
+      transition: opacity .45s ease, transform .45s ease;
+      opacity: 1; transform: translateY(0);
+    }
+    .alert-item.entering { opacity: 0; transform: translateY(-16px); }
+    .alert-item.leaving  { opacity: 0; transform: translateY(12px); }
+    .alert-item.a-orange { border-left: 3px solid var(--orange); }
+    .alert-item.a-green  { border-left: 3px solid var(--green); }
+    .alert-item.a-blue   { border-left: 3px solid var(--blue); }
+    .alert-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; animation: pulse-dot 1.8s ease-in-out infinite; }
+    .dot-orange { background: var(--orange); }
+    .dot-green  { background: var(--green); }
+    .dot-blue   { background: var(--blue); }
+    .alert-text { color: rgba(255,255,255,0.85); font-size: 13px; line-height: 1.5; }
+    .alert-label { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 2px; }
+    @keyframes pulse-dot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50%      { transform: scale(1.5); opacity: .5; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .alert-dot, .live-dot { animation: none; }
+      .alert-item { transition: none; }
+    }
+
+    /* ── STATS ── */
+    .stats-bar {
+      background: var(--gray-100);
+      border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200);
+      display: flex; justify-content: center;
+    }
+    .stat-item {
+      flex: 1; max-width: 240px; text-align: center;
+      padding: 28px 20px; border-right: 1px solid var(--gray-200);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number { font-size: 36px; font-weight: 800; color: var(--navy); }
+    .stat-label { font-size: 13px; color: var(--gray-500); margin-top: 4px; }
+
+    /* ── SECTION BASE ── */
+    section { padding: 80px 5%; }
+    .section-label {
+      display: inline-block; background: var(--blue-light); color: var(--blue);
+      border-radius: 20px; padding: 4px 14px; font-size: 13px; font-weight: 600; margin-bottom: 14px;
+    }
+    .section-title { font-size: 36px; font-weight: 800; color: var(--navy); margin-bottom: 14px; line-height: 1.2; }
+    .section-title span { color: var(--blue); }
+    .section-sub { font-size: 17px; color: var(--gray-500); max-width: 560px; line-height: 1.7; }
+    .section-header { margin-bottom: 48px; }
+    .centered { text-align: center; }
+    .centered .section-sub { margin: 0 auto; }
+
+    /* ── PROBLEM ── */
+    .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .problem-card {
+      background: var(--gray-100); border-radius: 14px; padding: 28px 24px;
+      border-top: 4px solid var(--orange);
+    }
+    .problem-icon { font-size: 36px; margin-bottom: 14px; }
+    .problem-card h3 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .problem-card p { font-size: 14px; color: var(--gray-500); line-height: 1.65; }
+    .problem-cost {
+      display: inline-block; margin-top: 12px;
+      background: rgba(255,107,53,0.12); color: var(--orange);
+      font-weight: 700; font-size: 13px; padding: 4px 10px; border-radius: 6px;
+    }
+
+    /* ── SOLUTION ── */
+    .solution { background: var(--navy); }
+    .solution .section-title { color: #fff; }
+    .solution .section-title span { color: var(--orange); }
+    .solution .section-sub { color: rgba(255,255,255,0.65); }
+    .solution .section-label { background: rgba(0,163,224,0.15); }
+    .solution-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .solution-card {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px; padding: 28px 24px;
+    }
+    .solution-card h3 { color: #fff; font-size: 17px; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+    .solution-card p { color: rgba(255,255,255,0.65); font-size: 14px; line-height: 1.65; }
+    .solution-video-wrap {
+      max-width: 720px; margin: 0 auto 44px; border-radius: 16px; overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+      background: #000;
+    }
+    .solution-video-wrap video { display: block; width: 100%; height: auto; }
+    .module-icon {
+      width: 36px; height: 36px; border-radius: 8px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center; font-size: 18px;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how { background: var(--gray-100); }
+    .steps { display: flex; gap: 0; align-items: flex-start; position: relative; }
+    .steps::before {
+      content: ''; position: absolute; top: 32px; left: 10%; right: 10%;
+      height: 2px; background: linear-gradient(90deg, var(--blue), var(--orange)); z-index: 0;
+    }
+    .step { flex: 1; text-align: center; padding: 0 16px; position: relative; z-index: 1; }
+    .step-circle {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: var(--white); border: 3px solid var(--blue);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 18px; font-size: 24px; font-weight: 800; color: var(--blue);
+      box-shadow: 0 4px 16px rgba(0,163,224,0.2);
+    }
+    .step-circle.alert { border-color: var(--orange); color: var(--orange); }
+    .step h3 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .step p { font-size: 13px; color: var(--gray-500); line-height: 1.55; }
+    .step-badge {
+      display: inline-block; margin-top: 10px;
+      background: var(--orange); color: #fff;
+      font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── INDUSTRIES ── */
+    .industries-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .industry-card {
+      background: var(--white); border-radius: 14px; padding: 28px 20px;
+      text-align: center; border: 1px solid var(--gray-200);
+      transition: box-shadow .2s, transform .2s;
+    }
+    .industry-card:hover { box-shadow: 0 8px 24px rgba(10,37,64,0.1); transform: translateY(-3px); }
+    .industry-icon { font-size: 40px; margin-bottom: 12px; }
+    .industry-card h3 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .industry-card p { font-size: 13px; color: var(--gray-500); }
+
+    /* ── PROOF ── */
+    .proof { background: var(--white); }
+    .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .proof-card { border: 1px solid var(--gray-200); border-radius: 14px; padding: 28px 24px; }
+    .proof-quote { font-size: 32px; color: var(--blue); line-height: 1; margin-bottom: 12px; }
+    .proof-text { font-size: 14px; color: var(--gray-700); line-height: 1.7; margin-bottom: 18px; font-style: italic; }
+    .proof-author { display: flex; align-items: center; gap: 12px; }
+    .proof-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--navy));
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 700; font-size: 16px;
+    }
+    .proof-name { font-size: 14px; font-weight: 700; color: var(--navy); }
+    .proof-role { font-size: 12px; color: var(--gray-500); }
+    .proof-stars { color: #F59E0B; font-size: 14px; margin-bottom: 10px; }
+
+    /* ── COTIZACIÓN ── */
+    .cotizacion { background: var(--gray-100); }
+    .cotizacion-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: start; }
+    .cotizacion-card {
+      background: var(--white); border: 2px solid var(--gray-200); border-radius: 18px;
+      padding: 36px 28px; transition: transform .2s, box-shadow .2s;
+    }
+    .cotizacion-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(10,37,64,0.1); }
+    .cotizacion-card.featured {
+      border-color: var(--blue); background: var(--navy);
+      transform: scale(1.03); box-shadow: 0 16px 48px rgba(10,37,64,0.22);
+    }
+    .cotizacion-card.featured:hover { transform: scale(1.03) translateY(-4px); }
+    .cotizacion-badge {
+      display: inline-block; background: var(--orange); color: #fff;
+      font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px;
+      text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 18px;
+    }
+    .cotizacion-name { font-size: 22px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .featured .cotizacion-name { color: #fff; }
+    .cotizacion-tagline { font-size: 13px; color: var(--gray-500); margin-bottom: 24px; }
+    .featured .cotizacion-tagline { color: rgba(255,255,255,0.6); }
+    .cotizacion-price-box {
+      background: var(--blue-light); border-radius: 10px;
+      padding: 18px 20px; margin-bottom: 24px; text-align: center;
+    }
+    .featured .cotizacion-price-box { background: rgba(0,163,224,0.15); }
+    .cotizacion-price-label {
+      font-size: 13px; color: var(--gray-500); margin-bottom: 6px;
+    }
+    .featured .cotizacion-price-label { color: rgba(255,255,255,0.55); }
+    .cotizacion-price-value {
+      font-size: 20px; font-weight: 800; color: var(--blue);
+    }
+    .featured .cotizacion-price-value { color: var(--orange); }
+    .cotizacion-divider { border: none; border-top: 1px solid var(--gray-200); margin: 20px 0; }
+    .featured .cotizacion-divider { border-top-color: rgba(255,255,255,0.12); }
+    .cotizacion-features { list-style: none; margin-bottom: 28px; }
+    .cotizacion-features li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--gray-700); padding: 6px 0; }
+    .featured .cotizacion-features li { color: rgba(255,255,255,0.82); }
+    .feat-check { color: var(--green); font-weight: 700; flex-shrink: 0; }
+    .feat-minus { color: var(--gray-300); flex-shrink: 0; }
+    .cotizacion-cta {
+      display: block; text-align: center; padding: 14px; border-radius: 8px;
+      font-weight: 700; font-size: 15px; transition: all .2s;
+    }
+    .cotizacion-cta.outline { border: 2px solid var(--gray-300); color: var(--navy); }
+    .cotizacion-cta.outline:hover { border-color: var(--navy); background: var(--gray-100); transform: translateY(-1px); }
+    .cotizacion-cta.fill { background: var(--blue); color: #fff; }
+    .cotizacion-cta.fill:hover { background: #0089c1; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,163,224,0.3); }
+    .cotizacion-cta.fill-orange { background: var(--orange); color: #fff; }
+    .cotizacion-cta.fill-orange:hover { background: #e05520; transform: translateY(-1px); }
+    .cotizacion-note {
+      text-align: center; margin-top: 36px;
+      font-size: 14px; color: var(--gray-500);
+    }
+    .cotizacion-note strong { color: var(--navy); }
+
+    /* ── DEMO CTA ── */
+    .demo-section {
+      background: linear-gradient(135deg, #0d3a68, var(--navy));
+      text-align: center; padding: 80px 5%;
+    }
+    .demo-section .section-title { color: #fff; margin-bottom: 16px; }
+    .demo-section p { color: rgba(255,255,255,0.7); font-size: 18px; margin-bottom: 36px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .demo-actions { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+    /* ── FAQ ── */
+    .faq { background: var(--gray-100); }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto; }
+    .faq-item { background: var(--white); border-radius: 12px; padding: 24px; }
+    .faq-item h3 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .faq-item p { font-size: 14px; color: var(--gray-500); line-height: 1.65; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--navy); padding: 50px 5% 28px; color: rgba(255,255,255,0.65); }
+    .footer-top { display: flex; justify-content: space-between; gap: 40px; margin-bottom: 40px; flex-wrap: wrap; }
+    .footer-brand { max-width: 280px; }
+    .footer-brand p { font-size: 14px; margin-top: 12px; line-height: 1.65; }
+    .footer-col h4 { color: #fff; font-size: 14px; font-weight: 700; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .footer-col a { display: block; font-size: 14px; margin-bottom: 8px; color: rgba(255,255,255,0.6); transition: color .2s; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display: flex; justify-content: space-between; font-size: 13px; flex-wrap: wrap; gap: 10px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { flex-direction: column; padding: 60px 5%; }
+      .hero h1 { font-size: 34px; }
+      .hero-card { width: 100%; max-width: 400px; }
+      .problem-grid, .solution-grid, .cotizacion-grid, .industries-grid, .proof-grid { grid-template-columns: 1fr; }
+      .steps { flex-direction: column; align-items: center; }
+      .steps::before { display: none; }
+      .step { max-width: 280px; width: 100%; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .cotizacion-card.featured { transform: scale(1); }
+      .stats-bar { flex-wrap: wrap; }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--gray-200); max-width: 100%; width: 50%; }
+      nav .nav-links { display: none; }
+      .footer-top { flex-direction: column; }
+      .demo-form-row { flex-direction: column; gap: 0; }
+    }
+
+    /* ── DEMO FORM ── */
+    .demo-form {
+      max-width: 480px; margin: 0 auto 18px; text-align: left;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px; padding: 28px;
+    }
+    .demo-form-row { display: flex; gap: 16px; }
+    .demo-form-field { flex: 1; margin-bottom: 16px; }
+    .demo-form-field label { display: block; font-size: 13px; color: rgba(255,255,255,0.75); margin-bottom: 6px; font-weight: 600; }
+    .demo-form-field input {
+      width: 100%; padding: 11px 14px; border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.18); background: rgba(255,255,255,0.08);
+      color: #fff; font-size: 14px; font-family: inherit;
+    }
+    .demo-form-field input::placeholder { color: rgba(255,255,255,0.4); }
+    .demo-form-field input:focus { outline: none; border-color: var(--blue); background: rgba(255,255,255,0.12); }
+    .demo-form-submit { width: 100%; border: none; cursor: pointer; margin-top: 4px; }
+    .bot-field-wrap { position: absolute; left: -9999px; top: -9999px; }
+    .demo-alt { color: rgba(255,255,255,0.6); font-size: 14px; }
+    .demo-alt a { color: #fff; text-decoration: underline; }
+    .demo-form-error {
+      max-width: 480px; margin: 0 auto 16px; padding: 12px 16px;
+      background: rgba(255,107,53,0.18); border: 1px solid var(--orange);
+      border-radius: 8px; color: #fff; font-size: 14px; text-align: left;
+    }
+
+    /* ── WHATSAPP FLOAT ── */
+    .whatsapp-float {
+      position: fixed; right: 22px; bottom: 22px; z-index: 200;
+      width: 58px; height: 58px; border-radius: 50%;
+      background: #25D366; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      transition: transform .2s, box-shadow .2s, opacity .4s ease;
+      opacity: 0; pointer-events: none;
+    }
+    .whatsapp-float.is-visible { opacity: 1; pointer-events: auto; }
+    .whatsapp-float:hover { transform: scale(1.08); box-shadow: 0 8px 26px rgba(0,0,0,0.32); }
+    .whatsapp-float svg { width: 30px; height: 30px; }
+    @media (max-width: 600px) {
+      .whatsapp-float { right: 16px; bottom: 16px; width: 52px; height: 52px; }
+      .whatsapp-float svg { width: 27px; height: 27px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo-svg">
+    <div class="logo-block">
+      <div class="logo-wordmark">
+        <span class="part">pro</span>
+        <span class="logo-dot-wrap">
+          <span class="logo-dot"></span>
+        </span>
+        <span class="part">curem</span>
+      </div>
+      <div class="logo-tagline">SaaS · &amp; · Consulting</div>
+      <div class="logo-underline"></div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#solucion">Solución</a>
+    <a href="#como-funciona">Cómo funciona</a>
+    <a href="#industrias">Industrias</a>
+    <a href="#cotizacion">Cotización</a>
+    <a href="#contacto" class="nav-cta">Solicitar Demo</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">🏭 Procurement Industrial Inteligente</div>
+    <h1>De la orden de compra<br/>al proyecto. <span>Sin sorpresas.</span></h1>
+    <p>Pro.Curem combina asesoría especializada y tecnología SaaS para gestionar el ciclo completo de tus compras industriales: desde la requisición hasta la entrega en faena, con alertas en tiempo real que previenen multas y atrasos.</p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn-primary" onclick="seleccionarPlan('Demo general')">🚀 Solicitar Demo Gratuita</a>
+      <a href="#como-funciona" class="btn-secondary">Ver cómo funciona →</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card">
+      <div class="hero-card-title-row">
+        <div class="hero-card-title">⚡ Alertas activas ahora</div>
+        <div class="live-badge"><span class="live-dot"></span>En vivo</div>
+      </div>
+      <div class="alerts-feed" id="alerts-feed">
+        <div class="alert-item a-orange" data-idx="0">
+          <div class="alert-dot dot-orange"></div>
+          <div>
+            <div class="alert-text">FAT pendiente — Transformador OC-0847</div>
+            <div class="alert-label">⚠️ Retraso estimado: 8 días · Proveedor: Siemens</div>
+          </div>
+        </div>
+        <div class="alert-item a-green" data-idx="1">
+          <div class="alert-dot dot-green"></div>
+          <div>
+            <div class="alert-text">Embarque confirmado — Válvulas OC-0821</div>
+            <div class="alert-label">✅ ETD: pronto · ETA obra: por confirmar</div>
+          </div>
+        </div>
+        <div class="alert-item a-blue" data-idx="2">
+          <div class="alert-dot dot-blue"></div>
+          <div>
+            <div class="alert-text">Contrato próximo a vencer — Proveedor XYZ</div>
+            <div class="alert-label">📅 Vence en 18 días · Requiere renovación</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-number">-34%</div><div class="stat-label">Reducción en atrasos de entrega</div></div>
+  <div class="stat-item"><div class="stat-number">72h</div><div class="stat-label">Implementación inicial en operación</div></div>
+  <div class="stat-item"><div class="stat-number">10x</div><div class="stat-label">Más económico que SAP/Oracle</div></div>
+  <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Especializado en compras industriales</div></div>
+</div>
+
+<!-- PROBLEM -->
+<section id="problema">
+  <div class="section-header">
+    <div class="section-label">El Problema</div>
+    <h2 class="section-title">Las compras industriales de proyecto<br/>tienen desafíos únicos</h2>
+    <p class="section-sub">No se trata de stock. Es seguimiento fino de cada orden desde fabricación hasta la obra. Y cada atraso cuesta caro.</p>
+  </div>
+  <div class="problem-grid">
+    <div class="problem-card">
+      <div class="problem-icon">⏱️</div>
+      <h3>Cero visibilidad del proceso</h3>
+      <p>No sabes si tu OC comenzó su fabricación, si las FAT están coordinadas, cuándo se embarca, cuándo llega al proyecto. La info está dispersa en correos y planillas.</p>
+      <span class="problem-cost">Riesgo: multas por atraso</span>
+    </div>
+    <div class="problem-card">
+      <div class="problem-icon">🚨</div>
+      <h3>Alertas que llegan tarde</h3>
+      <p>Te enteras de los problemas cuando ya es demasiado tarde: el equipo no llega a tiempo y las penalidades ya corrieron.</p>
+      <span class="problem-cost">Riesgo: penalidades contractuales</span>
+    </div>
+    <div class="problem-card">
+      <div class="problem-icon">📋</div>
+      <h3>Gestión manual y dispersa</h3>
+      <p>SAP es demasiado caro y rígido. Excel no escala. Los datos de proveedores, contratos y OC están en silos que nadie conecta.</p>
+      <span class="problem-cost">Riesgo: errores y reprocesos</span>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="solution" id="solucion">
+  <div class="section-header">
+    <div class="section-label">La Solución</div>
+    <h2 class="section-title">Todo lo que necesitas<br/>en <span>una sola plataforma</span></h2>
+    <p class="section-sub">Asesoría experta + tecnología ágil. Adaptamos Pro.Curem a tu flujo de compras en días, no meses.</p>
+  </div>
+  <div class="solution-video-wrap">
+    <video controls preload="metadata" playsinline>
+      <source src="explicacion-pro-curem.mp4" type="video/mp4">
+      Tu navegador no soporta la reproducción de video. <a href="explicacion-pro-curem.mp4">Descarga el video aquí</a>.
+    </video>
+  </div>
+  <div class="solution-grid">
+    <div class="solution-card">
+      <h3><div class="module-icon" style="background:rgba(0,163,224,0.18);">🏭</div>Gestión de Proveedores</h3>
+      <p>Homologación, scorecard de desempeño, evaluación por categoría, historial de entregas y alertas de cumplimiento. Conoce en tiempo real quiénes son tus proveedores críticos.</p>
+    </div>
+    <div class="solution-card">
+      <h3><div class="module-icon" style="background:rgba(255,107,53,0.18);">📦</div>Flujo de Compra Completo</h3>
+      <p>Desde la solicitud hasta la OC, con seguimiento de hitos: fabricación, inspección (FAT), embarque y entrega en obra. Aprobaciones multi-nivel configurables.</p>
+    </div>
+    <div class="solution-card">
+      <h3><div class="module-icon" style="background:rgba(0,184,122,0.18);">📊</div>Dashboard de KPIs y Ahorros</h3>
+      <p>Savings vs precio de referencia, OTD por proveedor, tiempo de ciclo por categoría, gasto por proyecto y alertas de desviación de presupuesto en tiempo real.</p>
+    </div>
+    <div class="solution-card">
+      <h3><div class="module-icon" style="background:rgba(149,76,233,0.18);">🔔</div>Contratos y Alertas Críticas</h3>
+      <p>Motor de alertas proactivo: vencimiento de contratos, desvíos en fabricación, demoras en embarque, documentos faltantes. La información correcta, a la persona correcta.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="como-funciona">
+  <div class="section-header centered">
+    <div class="section-label">Cómo Funciona</div>
+    <h2 class="section-title">Del pedido a la obra, bajo control</h2>
+    <p class="section-sub">Seguimiento del ciclo completo de la orden de compra industrial</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-circle">1</div>
+      <h3>Requisición</h3>
+      <p>Solicitud interna, especificaciones técnicas y aprobación presupuestal en línea</p>
+    </div>
+    <div class="step">
+      <div class="step-circle">2</div>
+      <h3>Cotización y OC</h3>
+      <p>Comparativo de proveedores, negociación y emisión de orden de compra</p>
+    </div>
+    <div class="step">
+      <div class="step-circle alert">3</div>
+      <h3>Fabricación + FAT</h3>
+      <p>Seguimiento del proceso productivo y pruebas de fábrica con alertas de hitos</p>
+      <span class="step-badge">ALERTA ACTIVA</span>
+    </div>
+    <div class="step">
+      <div class="step-circle alert">4</div>
+      <h3>Embarque y Logística</h3>
+      <p>Tracking de carga, documentos de exportación/importación y ETA en obra</p>
+      <span class="step-badge">ALERTA ACTIVA</span>
+    </div>
+    <div class="step">
+      <div class="step-circle">5</div>
+      <h3>Entrega en Obra</h3>
+      <p>Recepción conforme en faena, cierre de OC y evaluación del proveedor</p>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section id="industrias">
+  <div class="section-header centered">
+    <div class="section-label">Industrias</div>
+    <h2 class="section-title">Diseñado para la industria pesada</h2>
+  </div>
+  <div class="industries-grid">
+    <div class="industry-card"><div class="industry-icon">⛏️</div><h3>Minería</h3><p>Faenas remotas, equipos críticos, tiempos de entrega ajustados</p></div>
+    <div class="industry-card"><div class="industry-icon">⚡</div><h3>Energía y Utilities</h3><p>Estaciones eléctricas, subestaciones, plantas de generación</p></div>
+    <div class="industry-card"><div class="industry-icon">🏗️</div><h3>Construcción Industrial</h3><p>Proyectos EPC, ingeniería de detalle, obras civiles e industriales</p></div>
+    <div class="industry-card"><div class="industry-icon">🛢️</div><h3>Oil &amp; Gas</h3><p>Equipos críticos, materiales especiales, normativa internacional</p></div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="proof">
+  <div class="section-header centered">
+    <div class="section-label">Casos de Éxito</div>
+    <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+  </div>
+  <div class="proof-grid">
+    <div class="proof-card">
+      <div class="proof-stars">★★★★★</div>
+      <div class="proof-quote">"</div>
+      <p class="proof-text">Antes gestionábamos 200 OCs en Excel. Con Pro.Curem implementamos en 3 días y en el primer mes detectamos 4 atrasos críticos que hubieran generado multas millonarias.</p>
+      <div class="proof-author">
+        <div class="proof-avatar">CP</div>
+        <div><div class="proof-name">Carlos P.</div><div class="proof-role">Jefe de Abastecimiento · Proyecto Minero, Chile</div></div>
+      </div>
+    </div>
+    <div class="proof-card">
+      <div class="proof-stars">★★★★★</div>
+      <div class="proof-quote">"</div>
+      <p class="proof-text">Llevábamos 2 años intentando implementar SAP PM. Pro.Curem nos dio el 80% de la funcionalidad que necesitamos al 10% del costo y en una fracción del tiempo.</p>
+      <div class="proof-author">
+        <div class="proof-avatar">MA</div>
+        <div><div class="proof-name">María A.</div><div class="proof-role">Gerente de Proyectos · Empresa de Transmisión Eléctrica</div></div>
+      </div>
+    </div>
+    <div class="proof-card">
+      <div class="proof-stars">★★★★★</div>
+      <div class="proof-quote">"</div>
+      <p class="proof-text">La asesoría incluida marca la diferencia. No solo usamos la app, sino que optimizamos todo nuestro proceso de compras. El ROI fue evidente desde el segundo mes.</p>
+      <div class="proof-author">
+        <div class="proof-avatar">RV</div>
+        <div><div class="proof-name">Roberto V.</div><div class="proof-role">Director de Procurement · Constructora Industrial</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COTIZACIÓN -->
+<section class="cotizacion" id="cotizacion">
+  <div class="section-header centered">
+    <div class="section-label">Cotización</div>
+    <h2 class="section-title">Un plan para cada escala de operación</h2>
+    <p class="section-sub">Cada empresa tiene necesidades distintas. Conversemos y te preparamos una propuesta a medida, sin compromiso.</p>
+  </div>
+  <div class="cotizacion-grid">
+
+    <!-- ESSENTIAL -->
+    <div class="cotizacion-card">
+      <div class="cotizacion-name">Essential</div>
+      <div class="cotizacion-tagline">Para equipos que inician su gestión estructurada</div>
+      <div class="cotizacion-price-box">
+        <div class="cotizacion-price-label">Precio según tu operación</div>
+        <div class="cotizacion-price-value">Solicitar cotización →</div>
+      </div>
+      <hr class="cotizacion-divider" />
+      <ul class="cotizacion-features">
+        <li><span class="feat-check">✓</span> Hasta 5 usuarios compradores</li>
+        <li><span class="feat-check">✓</span> Hasta 200 OC activas simultáneas</li>
+        <li><span class="feat-check">✓</span> Flujo completo de compra y aprobación</li>
+        <li><span class="feat-check">✓</span> Gestión básica de proveedores</li>
+        <li><span class="feat-check">✓</span> Dashboard de KPIs estándar</li>
+        <li><span class="feat-check">✓</span> Alertas de vencimiento y atrasos</li>
+        <li><span class="feat-check">✓</span> Asesoría especializada incluida</li>
+        <li><span class="feat-check">✓</span> Soporte por email</li>
+        <li><span class="feat-minus">–</span> Integraciones ERP/API</li>
+        <li><span class="feat-minus">–</span> Dashboards personalizados</li>
+      </ul>
+      <a href="#contacto" class="cotizacion-cta outline" onclick="seleccionarPlan('Essential')">Solicitar cotización</a>
+    </div>
+
+    <!-- PROFESSIONAL -->
+    <div class="cotizacion-card featured">
+      <div class="cotizacion-badge">MÁS POPULAR</div>
+      <div class="cotizacion-name">Professional</div>
+      <div class="cotizacion-tagline">Para departamentos de compras en crecimiento</div>
+      <div class="cotizacion-price-box">
+        <div class="cotizacion-price-label">Precio según tu operación</div>
+        <div class="cotizacion-price-value">Solicitar cotización →</div>
+      </div>
+      <hr class="cotizacion-divider" />
+      <ul class="cotizacion-features">
+        <li><span class="feat-check">✓</span> Hasta 20 usuarios compradores</li>
+        <li><span class="feat-check">✓</span> OC ilimitadas</li>
+        <li><span class="feat-check">✓</span> Todo lo de Essential</li>
+        <li><span class="feat-check">✓</span> Scorecard avanzado de proveedores</li>
+        <li><span class="feat-check">✓</span> Dashboards personalizados por proyecto</li>
+        <li><span class="feat-check">✓</span> Motor de alertas configurable</li>
+        <li><span class="feat-check">✓</span> API para integración con ERP</li>
+        <li><span class="feat-check">✓</span> Mayor dedicación de asesoría mensual</li>
+        <li><span class="feat-check">✓</span> Soporte prioritario</li>
+        <li><span class="feat-check">✓</span> Onboarding dedicado</li>
+      </ul>
+      <a href="#contacto" class="cotizacion-cta fill-orange" onclick="seleccionarPlan('Professional')">Solicitar cotización</a>
+    </div>
+
+    <!-- ENTERPRISE -->
+    <div class="cotizacion-card">
+      <div class="cotizacion-name">Enterprise</div>
+      <div class="cotizacion-tagline">Para operaciones industriales a gran escala</div>
+      <div class="cotizacion-price-box">
+        <div class="cotizacion-price-label">Propuesta personalizada</div>
+        <div class="cotizacion-price-value">Hablar con ventas →</div>
+      </div>
+      <hr class="cotizacion-divider" />
+      <ul class="cotizacion-features">
+        <li><span class="feat-check">✓</span> Usuarios ilimitados</li>
+        <li><span class="feat-check">✓</span> OC y volumen de gestión ilimitados</li>
+        <li><span class="feat-check">✓</span> Todo lo de Professional</li>
+        <li><span class="feat-check">✓</span> Consultor dedicado asignado</li>
+        <li><span class="feat-check">✓</span> Flujos de trabajo 100% personalizados</li>
+        <li><span class="feat-check">✓</span> Integración completa ERP (SAP, Oracle)</li>
+        <li><span class="feat-check">✓</span> SLA garantizado 99.9% uptime</li>
+        <li><span class="feat-check">✓</span> Asesoría ilimitada incluida</li>
+        <li><span class="feat-check">✓</span> Soporte 24/7 con gestor de cuenta</li>
+        <li><span class="feat-check">✓</span> Capacitación para todo el equipo</li>
+      </ul>
+      <a href="#contacto" class="cotizacion-cta outline" onclick="seleccionarPlan('Enterprise')">Contactar ventas</a>
+    </div>
+
+  </div>
+  <p class="cotizacion-note">
+    ✅ Prueba gratuita de 14 días · Sin tarjeta de crédito · Sin obligación de compra<br/>
+    <strong>Todos los planes incluyen asesoría especializada en procurement industrial desde el día uno.</strong>
+  </p>
+</section>
+
+<!-- DEMO CTA -->
+<section class="demo-section" id="contacto">
+  <h2 class="section-title">¿Listo para tomar el control de tus compras?</h2>
+  <p>Completa tus datos y agenda una demo de 30 minutos. Te mostramos la plataforma con tus propios datos de ejemplo.</p>
+
+  <p id="form-error-msg" class="demo-form-error" hidden>⚠️ Revisa tus datos: nombre, empresa y email son obligatorios. Inténtalo de nuevo.</p>
+  <form name="contacto-demo" method="POST" action="contact-form.php" class="demo-form" id="contacto-demo-form">
+    <p class="bot-field-wrap" aria-hidden="true">
+      <label>No llenar este campo: <input name="empresa_web" tabindex="-1" autocomplete="off" /></label>
+    </p>
+    <input type="hidden" id="d-plan" name="plan" value="No especificado">
+    <div class="demo-form-row">
+      <div class="demo-form-field">
+        <label for="d-nombre">Nombre*</label>
+        <input type="text" id="d-nombre" name="nombre" required>
+      </div>
+      <div class="demo-form-field">
+        <label for="d-empresa">Empresa*</label>
+        <input type="text" id="d-empresa" name="empresa" required>
+      </div>
+    </div>
+    <div class="demo-form-field">
+      <label for="d-email">Email*</label>
+      <input type="email" id="d-email" name="email" required>
+    </div>
+    <div class="demo-form-field">
+      <label for="d-telefono">Teléfono</label>
+      <input type="tel" id="d-telefono" name="telefono" placeholder="Opcional">
+    </div>
+    <button type="submit" class="btn-primary demo-form-submit">🚀 Solicitar Demo Gratuita</button>
+  </form>
+
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="section-header centered">
+    <div class="section-label">Preguntas Frecuentes</div>
+    <h2 class="section-title">Todo lo que necesitas saber</h2>
+  </div>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <h3>¿Cuánto tiempo toma implementar Pro.Curem?</h3>
+      <p>El onboarding básico toma 72 horas. En la primera semana tu equipo está operando con flujos reales. No requiere proyectos de TI ni infraestructura propia.</p>
+    </div>
+    <div class="faq-item">
+      <h3>¿Se puede adaptar a nuestro flujo de compras?</h3>
+      <p>Sí. Cada empresa tiene su proceso. La asesoría incluida en todos los planes está orientada a mapear tu flujo actual y configurar Pro.Curem para que se ajuste a él, no al revés.</p>
+    </div>
+    <div class="faq-item">
+      <h3>¿Cómo se determina el precio?</h3>
+      <p>El precio depende del volumen de operación, número de usuarios y funcionalidades requeridas. Contáctanos y te preparamos una propuesta personalizada en menos de 24 horas.</p>
+    </div>
+    <div class="faq-item">
+      <h3>¿Se integra con nuestro ERP actual?</h3>
+      <p>Los planes Professional y Enterprise incluyen API REST para integración bidireccional con SAP, Oracle u otros ERP. El plan Essential puede exportar/importar datos vía Excel.</p>
+    </div>
+    <div class="faq-item">
+      <h3>¿Qué diferencia a Pro.Curem de otras soluciones?</h3>
+      <p>Somos los únicos que combinamos software + asesoría especializada en compras industriales de proyecto. Entendemos FATs, embarques internacionales y entrega en faena.</p>
+    </div>
+    <div class="faq-item">
+      <h3>¿Dónde están los servidores? ¿Es seguro?</h3>
+      <p>Pro.Curem opera en infraestructura cloud con cifrado de datos en tránsito y reposo. Disponible en servidores en Latinoamérica para cumplir requisitos locales de privacidad.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo-block" style="margin-bottom:14px;">
+        <div class="logo-wordmark">
+          <span class="part">pro</span>
+          <span class="logo-dot-wrap">
+            <span class="logo-dot"></span>
+          </span>
+          <span class="part">curem</span>
+        </div>
+        <div class="logo-tagline">SaaS · &amp; · Consulting</div>
+        <div class="logo-underline"></div>
+      </div>
+      <p>Inteligencia de procurement para la industria. Asesoría + SaaS para que tus compras lleguen a tiempo y dentro del presupuesto.</p>
+      <p style="margin-top:12px; font-size:14px;">
+        <a href="mailto:contacto@pro-curem.com" onclick="gtag('event','conversion',{'send_to':'AW-17544760432/B-jqCMLxxM0cEPCY_61B'});" style="color: rgba(255,255,255,0.6);">contacto@pro-curem.com</a>
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Producto</h4>
+      <a href="#solucion">Módulos</a>
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#cotizacion">Cotización</a>
+      <a href="#contacto">Demo</a>
+    </div>
+    <div class="footer-col">
+      <h4>Industrias</h4>
+      <a href="#">Minería</a>
+      <a href="#">Energía</a>
+      <a href="#">Construcción Industrial</a>
+      <a href="#">Oil &amp; Gas</a>
+    </div>
+    <div class="footer-col">
+      <h4>Empresa</h4>
+      <a href="#">Sobre Pro.Curem</a>
+      <a href="#">Blog</a>
+      <a href="#">Casos de éxito</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Pro.Curem · Todos los derechos reservados</span>
+    <span>Términos de uso · Privacidad · Seguridad</span>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOTANTE -->
+<a href="https://wa.me/56992220281?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Pro.Curem"
+   class="whatsapp-float" target="_blank" rel="noopener"
+   aria-label="Escríbenos por WhatsApp"
+   onclick="gtag('event','conversion',{'send_to':'AW-17544760432/TAvMCL_xxM0cEPCY_61B'});">
+  <svg viewBox="0 0 32 32" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16.004 3C9.376 3 4 8.373 4 15c0 2.31.646 4.47 1.77 6.31L4 29l7.86-1.74A11.9 11.9 0 0 0 16.004 27C22.63 27 28 21.627 28 15S22.63 3 16.004 3Zm0 21.8c-1.94 0-3.75-.55-5.29-1.5l-.38-.22-4.66 1.03 1.06-4.53-.25-.4A9.7 9.7 0 0 1 5.2 15c0-5.96 4.85-10.8 10.8-10.8 5.96 0 10.8 4.84 10.8 10.8s-4.84 10.8-10.8 10.8Zm5.94-8.1c-.32-.16-1.9-.94-2.2-1.05-.3-.11-.5-.16-.72.16-.21.32-.82 1.05-1 1.26-.19.21-.37.24-.69.08-.32-.16-1.34-.5-2.55-1.58-.94-.84-1.58-1.87-1.76-2.19-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.55.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.63-.53-.54-.72-.55h-.62c-.21 0-.56.08-.85.4-.29.32-1.12 1.09-1.12 2.67s1.15 3.1 1.31 3.31c.16.21 2.27 3.47 5.5 4.86.77.33 1.37.53 1.84.68.77.24 1.47.21 2.03.13.62-.09 1.9-.78 2.17-1.53.27-.75.27-1.4.19-1.53-.08-.13-.29-.21-.61-.37Z"/>
+  </svg>
+</a>
+
+<script>
+  function seleccionarPlan(plan) {
+    var campo = document.getElementById('d-plan');
+    if (campo) { campo.value = plan; }
+  }
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('form_error')) {
+      var msg = document.getElementById('form-error-msg');
+      if (msg) { msg.hidden = false; }
+    }
+  })();
+
+  // ── Enhanced Conversions: guardar email/teléfono para recuperarlos en gracias.html ──
+  (function () {
+    var form = document.getElementById('contacto-demo-form');
+    if (!form) return;
+    form.addEventListener('submit', function () {
+      try {
+        var email = document.getElementById('d-email');
+        var telefono = document.getElementById('d-telefono');
+        if (email && email.value.trim()) {
+          sessionStorage.setItem('pc_ec_email', email.value.trim());
+        }
+        if (telefono && telefono.value.trim()) {
+          sessionStorage.setItem('pc_ec_phone', telefono.value.trim());
+        }
+      } catch (e) {
+        // sessionStorage no disponible (modo privado, etc.) — seguimos sin Enhanced Conversions
+      }
+    });
+  })();
+
+  // ── Botón flotante de WhatsApp: aparece con delay para no competir con el CTA principal ──
+  (function () {
+    var btn = document.querySelector('.whatsapp-float');
+    if (!btn) return;
+    var shown = false;
+    function mostrar() {
+      if (shown) return;
+      shown = true;
+      btn.classList.add('is-visible');
+      window.removeEventListener('scroll', alScrollear);
+      clearTimeout(timer);
+    }
+    function alScrollear() {
+      if (window.scrollY > 300) mostrar();
+    }
+    window.addEventListener('scroll', alScrollear, { passive: true });
+    var timer = setTimeout(mostrar, 4000);
+  })();
+
+  // ── Feed de alertas "en vivo" del hero ──
+  (function () {
+    var feed = document.getElementById('alerts-feed');
+    if (!feed) return;
+
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var MESES = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+
+    function fecha(offsetDias) {
+      var d = new Date();
+      d.setDate(d.getDate() + offsetDias);
+      return d.getDate() + ' ' + MESES[d.getMonth()];
+    }
+
+    // Pool de alertas simuladas. Los labels se calculan en base a la fecha
+    // de hoy para que nunca queden "viejas" aunque pase el tiempo.
+    var pool = [
+      { type: 'orange', dot: 'dot-orange', text: 'FAT pendiente — Transformador OC-0847',
+        label: function () { return '⚠️ Retraso estimado: 8 días · Proveedor: Siemens'; } },
+      { type: 'green', dot: 'dot-green', text: 'Embarque confirmado — Válvulas OC-0821',
+        label: function () { return '✅ ETD: ' + fecha(2) + ' · ETA obra: ' + fecha(10); } },
+      { type: 'blue', dot: 'dot-blue', text: 'Contrato próximo a vencer — Proveedor XYZ',
+        label: function () { return '📅 Vence en 18 días · Requiere renovación'; } },
+      { type: 'orange', dot: 'dot-orange', text: 'Inspección FAT reprogramada — Bomba OC-0902',
+        label: function () { return '⚠️ Nueva fecha: ' + fecha(5) + ' · Proveedor: Grundfos'; } },
+      { type: 'green', dot: 'dot-green', text: 'Entrega conforme en obra — Cableado OC-0788',
+        label: function () { return '✅ Recibido ' + fecha(-1) + ' · Sin observaciones'; } },
+      { type: 'blue', dot: 'dot-blue', text: 'Documento de embarque pendiente — Grúa OC-0855',
+        label: function () { return '🔔 BL requerido antes del ' + fecha(4); } },
+      { type: 'orange', dot: 'dot-orange', text: 'Desviación de presupuesto — Categoría Acero',
+        label: function () { return '⚠️ +12% vs. referencia · Requiere revisión'; } },
+      { type: 'green', dot: 'dot-green', text: 'Proveedor homologado — Nueva alta',
+        label: function () { return '✅ Categoría Instrumentación · Score inicial 92'; } }
+    ];
+
+    // Refresca las fechas de las 3 tarjetas iniciales (SSR/no-JS fallback)
+    // para que siempre muestren info vigente, incluso sin rotar.
+    var iniciales = feed.querySelectorAll('.alert-item[data-idx]');
+    iniciales.forEach(function (el) {
+      var idx = parseInt(el.getAttribute('data-idx'), 10);
+      var a = pool[idx];
+      if (!a) return;
+      var labelEl = el.querySelector('.alert-label');
+      if (labelEl) labelEl.textContent = a.label();
+    });
+
+    if (reduceMotion) return; // no rotar si el usuario prefiere menos movimiento
+
+    var maxVisible = 3;
+    var cursor = iniciales.length - 1;
+
+    function construirItem(a) {
+      var div = document.createElement('div');
+      div.className = 'alert-item a-' + a.type + ' entering';
+      div.innerHTML =
+        '<div class="alert-dot ' + a.dot + '"></div>' +
+        '<div><div class="alert-text">' + a.text + '</div>' +
+        '<div class="alert-label">' + a.label() + '</div></div>';
+      return div;
+    }
+
+    function tick() {
+      cursor = (cursor + 1) % pool.length;
+      var item = construirItem(pool[cursor]);
+      feed.insertBefore(item, feed.firstChild);
+
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { item.classList.remove('entering'); });
+      });
+
+      var items = feed.querySelectorAll('.alert-item');
+      if (items.length > maxVisible) {
+        var ultimo = items[items.length - 1];
+        ultimo.classList.add('leaving');
+        setTimeout(function () {
+          if (ultimo.parentNode) ultimo.parentNode.removeChild(ultimo);
+        }, 450);
+      }
+    }
+
+    setInterval(tick, 6500);
+  })();
+</script>
+
+</body>
+</html>

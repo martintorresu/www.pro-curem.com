@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow">
+  <title>Gracias — Pro.Curem</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17544760432"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17544760432');
+  </script>
+
+  <!-- Enhanced Conversions: normaliza y envía user_data antes del evento de conversión -->
+  <script>
+    function pcNormalizarTelefono(tel) {
+      if (!tel) return null;
+      var limpio = tel.replace(/[^\d+]/g, '');
+      if (!limpio) return null;
+      if (limpio.charAt(0) === '+') return limpio;
+      if (limpio.indexOf('56') === 0) return '+' + limpio;
+      if (limpio.charAt(0) === '0') { limpio = limpio.substring(1); }
+      return '+56' + limpio;
+    }
+
+    (function () {
+      var userData = {};
+      try {
+        var email = sessionStorage.getItem('pc_ec_email');
+        var telefono = sessionStorage.getItem('pc_ec_phone');
+        if (email) { userData.email = email; }
+        if (telefono) {
+          var normalizado = pcNormalizarTelefono(telefono);
+          if (normalizado) { userData.phone_number = normalizado; }
+        }
+      } catch (e) {
+        // sessionStorage no disponible — continuamos sin Enhanced Conversions
+      } finally {
+        try {
+          sessionStorage.removeItem('pc_ec_email');
+          sessionStorage.removeItem('pc_ec_phone');
+        } catch (e) { /* no-op */ }
+      }
+      if (Object.keys(userData).length > 0) {
+        gtag('set', 'user_data', userData);
+      }
+    })();
+  </script>
+
+  <!-- Event snippet for Contacto conversion page -->
+  <script>
+    gtag('event', 'conversion', {'send_to': 'AW-17544760432/o5HkCP2VkcocEPCY_61B'});
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400&display=swap" rel="stylesheet">
+  <style>
+    @keyframes pulse-dot {
+      0%   { box-shadow: 0 0 0 0 rgba(0,220,130,0.7); }
+      60%  { box-shadow: 0 0 0 7px rgba(0,220,130,0); }
+      100% { box-shadow: 0 0 0 0 rgba(0,220,130,0); }
+    }
+    :root {
+      --navy: #0A2540;
+      --blue: #00A3E0;
+      --orange: #FF6B35;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, var(--navy) 60%, #0d3a68 100%);
+      color: #fff; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 24px;
+    }
+    a { text-decoration: none; }
+    .card { max-width: 480px; }
+    .logo-wordmark {
+      font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 30px;
+      letter-spacing: 1px; display: flex; align-items: center; justify-content: center;
+      gap: 0; margin-bottom: 28px;
+    }
+    .logo-dot-wrap {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 22px; height: 22px; margin: 0 4px;
+      border: 1.5px solid rgba(255,255,255,0.5); border-radius: 50%;
+    }
+    .logo-dot { width: 11px; height: 11px; border-radius: 50%; background: #00DC82; animation: pulse-dot 2s ease-in-out infinite; }
+    .check {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: rgba(0,184,122,0.18); border: 2px solid #00B87A;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 32px; margin: 0 auto 24px;
+    }
+    h1 { font-size: 30px; font-weight: 800; margin-bottom: 14px; }
+    p { font-size: 16px; color: rgba(255,255,255,0.75); line-height: 1.65; margin-bottom: 28px; }
+    .btn-primary {
+      display: inline-block; background: var(--orange); color: #fff;
+      padding: 13px 30px; border-radius: 8px; font-weight: 700; font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo-wordmark">
+      <span>pro</span>
+      <span class="logo-dot-wrap"><span class="logo-dot"></span></span>
+      <span>curem</span>
+    </div>
+    <div class="check">✅</div>
+    <h1>¡Gracias por tu solicitud!</h1>
+    <p>Recibimos tus datos. Un especialista de Pro.Curem te contactará dentro de las próximas 24 horas hábiles para agendar tu demo.</p>
+    <a href="/" class="btn-primary">← Volver al sitio</a>
+  </div>
+</body>
+</html>

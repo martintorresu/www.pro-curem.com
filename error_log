@@ -1,0 +1,4 @@
+[06-Jul-2026 17:24:11 UTC] Pro.Curem contact-form.php SMTP error: Autenticación fallida — revisa usuario/contraseña en smtp-mailer.php: 535 5.7.8 Error: authentication failed: (reason unavailable)
+
+[06-Jul-2026 17:24:29 UTC] Pro.Curem contact-form.php SMTP error: Autenticación fallida — revisa usuario/contraseña en smtp-mailer.php: 535 5.7.8 Error: authentication failed: (reason unavailable)
+
