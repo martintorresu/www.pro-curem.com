@@ -885,10 +885,10 @@
 </footer>
 
 <!-- WHATSAPP FLOTANTE -->
-<a href="https://wa.me/56992220281?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Pro.Curem"
+<a href="#" id="whatsapp-float-btn"
    class="whatsapp-float" target="_blank" rel="noopener"
    aria-label="Escríbenos por WhatsApp"
-   onclick="gtag('event','conversion',{'send_to':'AW-17544760432/TAvMCL_xxM0cEPCY_61B'});">
+   >
   <svg viewBox="0 0 32 32" fill="#fff" xmlns="http://www.w3.org/2000/svg">
     <path d="M16.004 3C9.376 3 4 8.373 4 15c0 2.31.646 4.47 1.77 6.31L4 29l7.86-1.74A11.9 11.9 0 0 0 16.004 27C22.63 27 28 21.627 28 15S22.63 3 16.004 3Zm0 21.8c-1.94 0-3.75-.55-5.29-1.5l-.38-.22-4.66 1.03 1.06-4.53-.25-.4A9.7 9.7 0 0 1 5.2 15c0-5.96 4.85-10.8 10.8-10.8 5.96 0 10.8 4.84 10.8 10.8s-4.84 10.8-10.8 10.8Zm5.94-8.1c-.32-.16-1.9-.94-2.2-1.05-.3-.11-.5-.16-.72.16-.21.32-.82 1.05-1 1.26-.19.21-.37.24-.69.08-.32-.16-1.34-.5-2.55-1.58-.94-.84-1.58-1.87-1.76-2.19-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.55.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.63-.53-.54-.72-.55h-.62c-.21 0-.56.08-.85.4-.29.32-1.12 1.09-1.12 2.67s1.15 3.1 1.31 3.31c.16.21 2.27 3.47 5.5 4.86.77.33 1.37.53 1.84.68.77.24 1.47.21 2.03.13.62-.09 1.9-.78 2.17-1.53.27-.75.27-1.4.19-1.53-.08-.13-.29-.21-.61-.37Z"/>
   </svg>
@@ -944,6 +944,17 @@
     }
     window.addEventListener('scroll', alScrollear, { passive: true });
     var timer = setTimeout(mostrar, 4000);
+
+          // Numero armado en tiempo de ejecucion (no queda como texto plano en el HTML fuente)
+          var numero = ['56','99','22','20281'].join('');
+          var mensaje = encodeURIComponent('Hola, quiero mas informacion sobre Pro.Curem');
+          btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    if (typeof gtag === 'function') {
+                                gtag('event', 'conversion', { 'send_to': 'AW-17544760432/TAvMCL_xxM0cEPCY_61B' });
+                    }
+                    window.open('https://wa.me/' + numero + '?text=' + mensaje, '_blank', 'noopener');
+          });
   })();
 
   // ── Feed de alertas "en vivo" del hero ──
